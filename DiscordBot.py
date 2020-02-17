@@ -19,7 +19,7 @@ ham_tutorial.set_image(url="https://avatars0.githubusercontent.com/u/25629441?s=
 
 # embed는 !help를 했을 때 가독성을 높이는 help문을 만들기 위해 사용됩니다.
 
-token = "NjY3NTM5MjcxMDYxNzMzNDA3.XiEMgw.GQ0UEFSXlwSZolc3B238INOTdP8" # token = "MyToken"
+token = "MyToken" # token = "MyToken"
 # 디스코드 봇을 만들었을 때 발급되는 봇 token을 token에 넣어줍니다.
 
 activity = discord.Game(name="안녕하세요! 반갑습니다 :D")
@@ -72,6 +72,13 @@ async def on_message(msg):
         lang = text[2:4]
         text = text[4:]
         await msg.channel.send('```{}``` ↓ ```{}```'.format(text, res.kakao_translate(lang, text)))
+    if msg.content.startswith('!전적'):
+        text = msg.content.replace(" ", "")
+        title = text[3:]
+        level,kda,rating,rank,img_url = res.Rsix(title)
+        rainbow_embed = discord.Embed(title="{}의 전적입니다.".format(title), description="```레벨(level) : {}\n랭크 평균 KDA : {}\nMMR : {}\n랭크(Rank) : {}```\n # Most Operator".format(level, kda, rating, rank))
+        rainbow_embed.set_image(url=img_url)
+        await msg.channel.send(embed=rainbow_embed)
 
 # 봇 가동
 app.run(token)
