@@ -1,13 +1,17 @@
+import discord
 import urllib.request
 import simplejson, requests
 import json
+import requests
+from bs4 import BeautifulSoup
+
 
 class DiscordChatBot:
     def __init__(self):
         print('ready')
     def naver_search(self, title):
-        client_id = "client_id"  # 애플리케이션 등록시 발급 받은 값 입력
-        client_secret = "client_secret"  # 애플리케이션 등록시 발급 받은 값 입력
+        client_id = "RwjyEhl9dfEdYHCVQSYi"  # 애플리케이션 등록시 발급 받은 값 입력
+        client_secret = "0HWs5Gjm34"  # 애플리케이션 등록시 발급 받은 값 입력
         encText = urllib.parse.quote(title)
         url = "https://openapi.naver.com/v1/search/kin.json?query=" + encText + "&display=1&sort=sim"
         request = urllib.request.Request(url)
@@ -68,7 +72,27 @@ class DiscordChatBot:
         if (lang == '19'):
             lang = 'tr'
         url = "https://kapi.kakao.com/v1/translation/translate"
-        kakao_key = "kakaoRestApiKey" # 카카오 애플리케이션 등록후 발급되는 REST API 키를 넣어줍니다.
+        kakao_key = "08be4b67f926baf5bea639025a29dd97"
         r = requests.get(url, params={'query' : text, 'src_lang' : 'kr', 'target_lang' : lang}, headers={'Authorization' : 'KakaoAK ' + kakao_key } )
         js = simplejson.JSONEncoder().encode(r.json())
         return "".join(r.json()['translated_text'][0])
+    def Rsix(self, title):
+        def get_html(url):
+            _html = ""
+            resp = requests.get(url)
+            if resp.status_code == 200:
+                _html = resp.text
+                return resp.text
+        id = title
+        url = "https://r6.tracker.network/profile/pc/" + id
+        html = get_html(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        # img_soup.findAll('img')[0]['src']
+        img_soup = soup.findAll('div', 'trn-defstat__value')[4]
+
+        level = soup.findAll('div', 'trn-defstat__value')[0].text.replace("\n","") # level
+        kda = soup.findAll('div', 'trn-defstat__value')[45].text.replace("\n","") # KDA
+        rating = soup.findAll('div', 'trn-text--dimmed')[1].text[:5] # rating
+        rank = soup.findAll('div', 'trn-text--dimmed')[0].text # rank   
+        img_url = img_soup.findAll('img')[0]['src'] # img_url
+        return level, kda, rating, rank, img_url
