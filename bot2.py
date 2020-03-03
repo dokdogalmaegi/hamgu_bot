@@ -10,8 +10,8 @@ class DiscordChatBot:
     def __init__(self):
         print('ready')
     def naver_search(self, title):
-        client_id = "client_id"  # 애플리케이션 등록시 발급 받은 값 입력
-        client_secret = "client_secret"  # 애플리케이션 등록시 발급 받은 값 입력
+        client_id = "Client_id"  # 애플리케이션 등록시 발급 받은 값 입력
+        client_secret = "Client_secret"  # 애플리케이션 등록시 발급 받은 값 입력
         encText = urllib.parse.quote(title)
         url = "https://openapi.naver.com/v1/search/kin.json?query=" + encText + "&display=1&sort=sim"
         request = urllib.request.Request(url)
@@ -72,7 +72,7 @@ class DiscordChatBot:
         if (lang == '19'):
             lang = 'tr'
         url = "https://kapi.kakao.com/v1/translation/translate"
-        kakao_key = "kakao_key"
+        kakao_key = "kakao_ket"
         r = requests.get(url, params={'query' : text, 'src_lang' : 'kr', 'target_lang' : lang}, headers={'Authorization' : 'KakaoAK ' + kakao_key } )
         js = simplejson.JSONEncoder().encode(r.json())
         return "".join(r.json()['translated_text'][0])
