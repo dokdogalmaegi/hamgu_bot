@@ -1,5 +1,6 @@
 # 햄구봇 사용 설명서
-`사용시 주의 사항 - 코드에는 각종 api키, Discord Token이 존재하지 않습니다. 사용 하길 원하시는 경우 Naver Api Key, Discord Bot Token이 필요합니다.`
+사용시 주의 사항 - 코드에는 각종 api키, Discord Token이 존재하지 않습니다. 사용 하길 원하시는 경우 Naver Api Key, Discord Bot Token이 필요합니다.
+P.S. R6 전적 검색 기능은 크롤링으로 인한 랭크전적만 확인 하실 수 있습니다.
 ### !help ( 햄구봇이 수행 할 수 있는 명령어를 보여줍니다. )
 <img src="/github/help.gif" title="Help_GIF" alt="Help_GIF"></img><br/>
 ### !namu or !나무위키 ( 나무위키페이지로 검색합니다 )
