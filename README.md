@@ -8,5 +8,6 @@
 <img src="/github/sik.gif" title="sik_GIF" alt="sik_GIF"></img><br/>
 ### !you or !유튜브 ( 키워드로 유튜브 검색 링크를 제공합니다. )
 <img src="/github/Youtube.gif" title="Youtube_GIF" alt="Youtube_GIF"></img><br/>
-### !번역 (lang) 내용 ( 한국어를 여러가지 언어로 번역 할 수 있습니다. )<br/>Naver Developer Api
+### !번역 ( 한국어를 여러가지 언어로 번역 할 수 있습니다. )<br/>Naver Developer Api
 <img src="/github/Translate.gif" title="Translate_GIF" alt="Translate_GIF"></img><br/>
+### !전적 ( R6 랭크 전적을 검색 할 수 있습니다. )<br/>크롤링 - R6 전적 검색 사이트[https://r6.tracker.network/]
