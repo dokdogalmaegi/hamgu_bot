@@ -10,6 +10,6 @@
 <img src="/github/Youtube.gif" title="Youtube_GIF" alt="Youtube_GIF"></img><br/>
 ### !번역 ( 한국어를 여러가지 언어로 번역 할 수 있습니다. )<br/>`Naver Developer Api`
 <img src="/github/Translate.gif" title="Translate_GIF" alt="Translate_GIF"></img><br/>
-### !전적 ( R6 랭크 전적을 검색 할 수 있습니다. )<br/>`Crawling - [R6 전적 검색 사이트]`(https://r6.tracker.network/)
+### !전적 ( R6 랭크 전적을 검색 할 수 있습니다. )<br/>Crawling - [R6 전적 검색 사이트](https://r6.tracker.network/)
 <img src="/github/R6.gif" title="R6_GIF" alt="R6_GIF"></img><br/>
 
